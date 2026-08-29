@@ -1,0 +1,41 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "0.1.0\r",
+  "FriendlyName": "Automation Forge - Toolset",
+  "Description": "Automation Forge as native Model Context Protocol tools. Adapter only.",
+  "Category": "Automation Forge",
+  "CreatedBy": "Blackcode",
+  "EditorOnly": true,
+  "CanContainContent": false,
+  "IsBetaVersion": true,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "AutomationForgeToolset",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit",
+      "TargetAllowList": [
+        "Editor"
+      ]
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "AutomationForge",
+      "Enabled": true
+    },
+    {
+      "Name": "AutomationForgePipelines",
+      "Enabled": true
+    },
+    {
+      "Name": "ToolsetRegistry",
+      "Enabled": true
+    },
+    {
+      "Name": "ModelContextProtocol",
+      "Enabled": true
+    }
+  ]
+}
