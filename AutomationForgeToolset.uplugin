@@ -1,7 +1,7 @@
 {
   "FileVersion": 3,
   "Version": 1,
-  "VersionName": "0.1.0\r",
+  "VersionName": "0.1.0",
   "FriendlyName": "Automation Forge - Toolset",
   "Description": "Automation Forge as native Model Context Protocol tools. Adapter only.",
   "Category": "Automation Forge",
