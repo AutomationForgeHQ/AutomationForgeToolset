@@ -1,14 +1,19 @@
 {
   "FileVersion": 3,
   "Version": 1,
-  "VersionName": "0.1.0",
+  "VersionName": "0.1.1",
   "FriendlyName": "Automation Forge - Toolset",
   "Description": "Automation Forge as native Model Context Protocol tools. Adapter only.",
   "Category": "Automation Forge",
-  "CreatedBy": "Blackcode",
+  "CreatedBy": "Bojan Andrejek",
+  "CreatedByURL": "https://kovati.dev",
+  "DocsURL": "https://github.com/AutomationForgeHQ/AutomationForgeToolset",
+  "MarketplaceURL": "",
+  "SupportURL": "https://github.com/AutomationForgeHQ/AutomationForgeToolset/issues",
   "EditorOnly": true,
   "CanContainContent": false,
-  "IsBetaVersion": true,
+  "IsBetaVersion": false,
+  "IsExperimentalVersion": true,
   "Installed": false,
   "Modules": [
     {

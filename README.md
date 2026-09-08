@@ -1,7 +1,7 @@
 # Automation Forge Toolset
 
-Exposes [Automation Forge](../AutomationForge/README.md) and
-[Automation Forge Pipelines](../AutomationForgePipelines/README.md) as native Model Context Protocol
+Exposes [Automation Forge](https://kovati.dev/plugins/automationforge/) and
+[Automation Forge Pipelines](https://kovati.dev/plugins/automationforge/) as native Model Context Protocol
 tools, so an agent can read the node library, author a pipeline, run it, and answer the gates it
 stops at — through exactly the operations a person uses.
 
@@ -35,6 +35,7 @@ This module holds **no logic**. Every tool forwards to a subsystem.
 | `IsCurrent`, `MakeInputHash` | Whether a slot's inputs still match what produced it |
 | `RecordCandidate`, `SelectCandidate` | Add a take; choose the one that ships |
 | `SetGraduated` | Hand-authored from here — the tooling stops touching this slot |
+| `PlanRun` | Cost a run before it commits: what's already current, what would be made, what it would spend |
 
 **Pipelines** — author one, run it, and stand at the gates.
 
@@ -42,10 +43,15 @@ This module holds **no logic**. Every tool forwards to a subsystem.
 |---|---|
 | `ListPipelines`, `CreatePipeline`, `SetPipelineDescription`, `SetPipelineOutput` | The definition |
 | `AddPipelineStep`, `AddPipelineExpand`, `AddPipelineFilter`, `AddPipelineGate` | Its steps |
+| `RemovePipelineStep` | Remove a step |
+| `MovePipelineStep` | Move a step — execution order is the structure |
 | `ConnectPipelineSteps`, `DisconnectPipelineStep`, `RenamePipelineStep`, `SetStepComment` | Wiring |
+| `SetPipelineBinding` | Set one input binding — `$channel` reads a channel, anything else is a literal |
 | `SetStepTest`, `SetStepCaching`, `SetStepOutput`, `SetStepWait`, `SetStepShape`, `ClearStepBinding` | Per-step behaviour |
 | `ArrangePipeline` | Lay the graph out — coordinates are never passed in |
+| `DescribePipeline` | Read a pipeline back, with the channels readable at every step |
 | `CheckPipeline` | Validate before spending anything |
+| `PlanPipelineRun` | What a pipeline would cost, without running it and without writing anything |
 | `StartPipelineRun`, `RunPipelineToCompletion`, `CancelPipelineRun` | Run it |
 | `GetPipelineRun`, `ListPipelineRuns` | Watch it |
 | `GetPendingDecisions`, `AnswerPipelineGate` | A pipeline stops where a person has to decide |

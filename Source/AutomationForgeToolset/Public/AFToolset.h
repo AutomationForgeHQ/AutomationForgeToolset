@@ -25,7 +25,7 @@ class AUTOMATIONFORGETOOLSET_API UAFToolset : public UToolsetDefinition
 
 public:
 
-	virtual FString GetToolsetVersion() const override { return TEXT("0.1"); }
+	virtual FString GetToolsetVersion() const override { return TEXT("0.1.1"); }
 
 	/**
 	 * Which modules contribute nodes, and how many each.
@@ -143,6 +143,7 @@ public:
 	UFUNCTION(meta = (AICallable), Category = "AutomationForge|Pipelines")
 	static FAFRunState GetPipelineRun(const FString& RunId);
 
+	/** The run ids this project knows about, newest first. Pass one to Get Pipeline Run for its state. */
 	UFUNCTION(meta = (AICallable), Category = "AutomationForge|Pipelines")
 	static TArray<FString> ListPipelineRuns();
 
@@ -473,6 +474,7 @@ public:
 	UFUNCTION(meta = (AICallable), Category = "AutomationForge|Authoring")
 	static void SetPipelineBinding(const FString& PipelinePath, FName StepId, FName Pin, const FString& Value);
 
+	/** Deletes one step and every wire into or out of it. The pipeline asset is edited, not a run. */
 	UFUNCTION(meta = (AICallable), Category = "AutomationForge|Authoring")
 	static void RemovePipelineStep(const FString& PipelinePath, FName StepId);
 
