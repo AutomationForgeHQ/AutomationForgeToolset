@@ -18,6 +18,13 @@ public class AutomationForgeToolset : ModuleRules
 			}
 			);
 
+		PrivateDependencyModuleNames.AddRange(
+			new string[]
+			{
+				"Projects",         // IPluginManager, so GetToolsetVersion() reads the descriptor
+			}
+			);
+
 		PrivateDependencyModuleNames.AddRange(new string[] { "UnrealEd" });
 	}
 }
